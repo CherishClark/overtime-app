@@ -11,3 +11,7 @@ Key requirement: company needs documentation taht salaried employees did or didn
 - SMS Sending -> link to approval or overtime input
 - Administrate admin dashboard
 - Email summary managers
+
+
+##refactor to dos:
+-refactor user assocation integration test in post_spec
