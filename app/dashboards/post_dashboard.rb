@@ -14,6 +14,7 @@ class PostDashboard < Administrate::BaseDashboard
     rationale: Field::Text.with_options(searchable: true),
     created_at: Field::DateTime.with_options(searchable: false),
     updated_at: Field::DateTime.with_options(searchable: false),
+    status: Field::Text.with_options(searchable: true),
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -46,6 +47,7 @@ class PostDashboard < Administrate::BaseDashboard
     :user,
     :date,
     :rationale,
+    :status
   ].freeze
 
   # Overwrite this method to customize how posts are displayed
