@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe 'admin dashboard' do 
-  it 'does not allow users to access without being singed in' do 
+describe 'admin dashboard' do
+  it 'does not allow users to access without being signed in' do
     visit admin_root_path
     expect(current_path).to eq(new_user_session_path)
   end
@@ -16,8 +16,8 @@ describe 'admin dashboard' do
   end
 
   it 'can be reached by an admin users' do
-    user = FactoryGirl.create(:admin_user)
-    login_as(user, :scope => :user)
+    admin_user = FactoryGirl.create(:admin_user)
+    login_as(admin_user, :scope => :user)
 
     visit admin_root_path
 

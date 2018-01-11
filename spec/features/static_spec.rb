@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'navigate' do |variable|
+describe 'navigate' do
   describe 'homepage' do
     it 'can be reached successfully' do
       visit root_path
