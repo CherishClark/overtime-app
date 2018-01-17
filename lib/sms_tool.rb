@@ -3,4 +3,5 @@ module SmsTool
     puts "Sending SMS..."
     puts "#{message} to #{number}"
   end
+
 end
