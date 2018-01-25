@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
 
   validates_format_of :phone, with: PHONE_REGEX
 
+  
+
   def full_name
   	last_name.upcase + ", " + first_name.upcase
   end
