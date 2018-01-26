@@ -43,9 +43,9 @@ describe 'navigate' do
 
   describe 'new' do
     it 'has a link from the homepage' do
-    employee = Employee.create(first_name: 'Employee', last_name: 'Authorized', email: "employee@example.com", password: "asdfasdf", password_confirmation: "asdfasdf", phone:"5555555555")
-    login_as(employee, :scope => :user)
-    visit root_path
+      employee = Employee.create(first_name: 'Employee', last_name: 'Authorized', email: "employee@example.com", password: "asdfasdf", password_confirmation: "asdfasdf", phone: "5555555555")
+      login_as(employee, :scope => :user)
+      visit root_path
 
       click_link("new_post_from_nav")
       expect(page.status_code).to eq(200)
@@ -59,7 +59,7 @@ describe 'navigate' do
       delete_user = FactoryGirl.create(:user)
       login_as(delete_user, :scope => :user)
 
-      post_to_delete = Post.create(date: Date.today, rationale: 'asdf', user_id: delete_user.id, overtime_request:2.3)
+      post_to_delete = Post.create(date: Date.today, rationale: 'asdf', user_id: delete_user.id, overtime_request: 3.5)
 
       visit posts_path
 
@@ -81,7 +81,7 @@ describe 'navigate' do
       fill_in 'post[date]', with: Date.today
       fill_in 'post[rationale]', with: "Some rationale"
       fill_in 'post[overtime_request]', with: 4.5
-      
+
       expect { click_on "Save" }.to change(Post, :count).by(1)
     end
 
